@@ -1,0 +1,6 @@
+framework module Pods_HomeFurnitureTests {
+  umbrella header "Pods-HomeFurnitureTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

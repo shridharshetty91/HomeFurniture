@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		0421CAD520AB6002008D6E66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421CAD420AB6002008D6E66 /* AppDelegate.swift */; };
-		0421CAD720AB6002008D6E66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421CAD620AB6002008D6E66 /* ViewController.swift */; };
 		0421CADA20AB6002008D6E66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0421CAD820AB6002008D6E66 /* Main.storyboard */; };
 		0421CADD20AB6002008D6E66 /* HomeFurniture.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0421CADB20AB6002008D6E66 /* HomeFurniture.xcdatamodeld */; };
 		0421CADF20AB6002008D6E66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0421CADE20AB6002008D6E66 /* Assets.xcassets */; };
 		0421CAE220AB6002008D6E66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0421CAE020AB6002008D6E66 /* LaunchScreen.storyboard */; };
 		0421CAED20AB6002008D6E66 /* HomeFurnitureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421CAEC20AB6002008D6E66 /* HomeFurnitureTests.swift */; };
+		0421CAFF20AB642A008D6E66 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421CAFE20AB642A008D6E66 /* DashboardViewController.swift */; };
+		0421CB0220AB6649008D6E66 /* FurnitureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421CB0020AB6649008D6E66 /* FurnitureCollectionViewCell.swift */; };
+		0421CB0320AB6649008D6E66 /* FurnitureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0421CB0120AB6649008D6E66 /* FurnitureCollectionViewCell.xib */; };
+		0421CB0620AB6A8C008D6E66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421CB0520AB6A8C008D6E66 /* Constants.swift */; };
+		0421CB0C20AB6CAD008D6E66 /* CreatFurnictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421CB0A20AB6CAD008D6E66 /* CreatFurnictureViewController.swift */; };
+		0421CB0D20AB6CAD008D6E66 /* CreatFurnictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0421CB0B20AB6CAD008D6E66 /* CreatFurnictureViewController.xib */; };
+		0421CB0F20AB88F3008D6E66 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421CB0E20AB88F3008D6E66 /* HelperFunctions.swift */; };
+		5D15EE4E47030F734304F7E3 /* Pods_HomeFurnitureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93BA630339E44313D3E4A615 /* Pods_HomeFurnitureTests.framework */; };
+		8BA4AA0A6B06769D105FC8E2 /* Pods_HomeFurniture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF1E129155BF9125D97F183 /* Pods_HomeFurniture.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +37,6 @@
 /* Begin PBXFileReference section */
 		0421CAD120AB6002008D6E66 /* HomeFurniture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeFurniture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0421CAD420AB6002008D6E66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0421CAD620AB6002008D6E66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0421CAD920AB6002008D6E66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0421CADC20AB6002008D6E66 /* HomeFurniture.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HomeFurniture.xcdatamodel; sourceTree = "<group>"; };
 		0421CADE20AB6002008D6E66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +45,19 @@
 		0421CAE820AB6002008D6E66 /* HomeFurnitureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeFurnitureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0421CAEC20AB6002008D6E66 /* HomeFurnitureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFurnitureTests.swift; sourceTree = "<group>"; };
 		0421CAEE20AB6002008D6E66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0421CAFE20AB642A008D6E66 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		0421CB0020AB6649008D6E66 /* FurnitureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnitureCollectionViewCell.swift; sourceTree = "<group>"; };
+		0421CB0120AB6649008D6E66 /* FurnitureCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FurnitureCollectionViewCell.xib; sourceTree = "<group>"; };
+		0421CB0520AB6A8C008D6E66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0421CB0A20AB6CAD008D6E66 /* CreatFurnictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatFurnictureViewController.swift; sourceTree = "<group>"; };
+		0421CB0B20AB6CAD008D6E66 /* CreatFurnictureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatFurnictureViewController.xib; sourceTree = "<group>"; };
+		0421CB0E20AB88F3008D6E66 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		1092AFCEAA16B934E90BDEFF /* Pods-HomeFurnitureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeFurnitureTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeFurnitureTests/Pods-HomeFurnitureTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2F27DCDB8D16C04D445C42CA /* Pods-HomeFurniture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeFurniture.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomeFurniture/Pods-HomeFurniture.release.xcconfig"; sourceTree = "<group>"; };
+		5940FA1EE230D7B6454C665D /* Pods-HomeFurniture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeFurniture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeFurniture/Pods-HomeFurniture.debug.xcconfig"; sourceTree = "<group>"; };
+		8DF1E129155BF9125D97F183 /* Pods_HomeFurniture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeFurniture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93BA630339E44313D3E4A615 /* Pods_HomeFurnitureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeFurnitureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B8E91AE0583C0E8E3EA8D59 /* Pods-HomeFurnitureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeFurnitureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomeFurnitureTests/Pods-HomeFurnitureTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA4AA0A6B06769D105FC8E2 /* Pods_HomeFurniture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D15EE4E47030F734304F7E3 /* Pods_HomeFurnitureTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +86,8 @@
 				0421CAD320AB6002008D6E66 /* HomeFurniture */,
 				0421CAEB20AB6002008D6E66 /* HomeFurnitureTests */,
 				0421CAD220AB6002008D6E66 /* Products */,
+				9C27987EB5CC6C31F61B9A42 /* Pods */,
+				C75E1BD27E02B13C5B46E72B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,8 +103,8 @@
 		0421CAD320AB6002008D6E66 /* HomeFurniture */ = {
 			isa = PBXGroup;
 			children = (
+				0421CAF720AB638C008D6E66 /* Source */,
 				0421CAD420AB6002008D6E66 /* AppDelegate.swift */,
-				0421CAD620AB6002008D6E66 /* ViewController.swift */,
 				0421CAD820AB6002008D6E66 /* Main.storyboard */,
 				0421CADE20AB6002008D6E66 /* Assets.xcassets */,
 				0421CAE020AB6002008D6E66 /* LaunchScreen.storyboard */,
@@ -99,6 +123,112 @@
 			path = HomeFurnitureTests;
 			sourceTree = "<group>";
 		};
+		0421CAF720AB638C008D6E66 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				0421CB0420AB6A73008D6E66 /* Helper */,
+				0421CAFA20AB63E9008D6E66 /* FurnictureDetails */,
+				0421CAF820AB639C008D6E66 /* Dashboard */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		0421CAF820AB639C008D6E66 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				0421CAFD20AB640F008D6E66 /* Model */,
+				0421CAFC20AB6405008D6E66 /* View */,
+				0421CAFB20AB63F6008D6E66 /* Controller */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		0421CAFA20AB63E9008D6E66 /* FurnictureDetails */ = {
+			isa = PBXGroup;
+			children = (
+				0421CB0920AB6C44008D6E66 /* Model */,
+				0421CB0820AB6C3F008D6E66 /* View */,
+				0421CB0720AB6C38008D6E66 /* Controller */,
+			);
+			path = FurnictureDetails;
+			sourceTree = "<group>";
+		};
+		0421CAFB20AB63F6008D6E66 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0421CAFE20AB642A008D6E66 /* DashboardViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0421CAFC20AB6405008D6E66 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0421CB0020AB6649008D6E66 /* FurnitureCollectionViewCell.swift */,
+				0421CB0120AB6649008D6E66 /* FurnitureCollectionViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0421CAFD20AB640F008D6E66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0421CB0420AB6A73008D6E66 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				0421CB0520AB6A8C008D6E66 /* Constants.swift */,
+				0421CB0E20AB88F3008D6E66 /* HelperFunctions.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		0421CB0720AB6C38008D6E66 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0421CB0A20AB6CAD008D6E66 /* CreatFurnictureViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0421CB0820AB6C3F008D6E66 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0421CB0B20AB6CAD008D6E66 /* CreatFurnictureViewController.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0421CB0920AB6C44008D6E66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9C27987EB5CC6C31F61B9A42 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5940FA1EE230D7B6454C665D /* Pods-HomeFurniture.debug.xcconfig */,
+				2F27DCDB8D16C04D445C42CA /* Pods-HomeFurniture.release.xcconfig */,
+				1092AFCEAA16B934E90BDEFF /* Pods-HomeFurnitureTests.debug.xcconfig */,
+				9B8E91AE0583C0E8E3EA8D59 /* Pods-HomeFurnitureTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C75E1BD27E02B13C5B46E72B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8DF1E129155BF9125D97F183 /* Pods_HomeFurniture.framework */,
+				93BA630339E44313D3E4A615 /* Pods_HomeFurnitureTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +236,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0421CAF120AB6002008D6E66 /* Build configuration list for PBXNativeTarget "HomeFurniture" */;
 			buildPhases = (
+				B408F506D93DD04A45B1F79C /* [CP] Check Pods Manifest.lock */,
 				0421CACD20AB6002008D6E66 /* Sources */,
 				0421CACE20AB6002008D6E66 /* Frameworks */,
 				0421CACF20AB6002008D6E66 /* Resources */,
+				BE60AAA110C30A6277BD9AD8 /* [CP] Embed Pods Frameworks */,
+				ABC097254E5DB8A08AA9C9C6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,9 +256,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0421CAF420AB6002008D6E66 /* Build configuration list for PBXNativeTarget "HomeFurnitureTests" */;
 			buildPhases = (
+				11FCABE71CB3E3F6AC43D455 /* [CP] Check Pods Manifest.lock */,
 				0421CAE420AB6002008D6E66 /* Sources */,
 				0421CAE520AB6002008D6E66 /* Frameworks */,
 				0421CAE620AB6002008D6E66 /* Resources */,
+				0806D3EFEAA30F3309B02E56 /* [CP] Embed Pods Frameworks */,
+				A1FA5DBE17EFA81C0BD6AF49 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -181,9 +317,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0421CB0D20AB6CAD008D6E66 /* CreatFurnictureViewController.xib in Resources */,
 				0421CAE220AB6002008D6E66 /* LaunchScreen.storyboard in Resources */,
 				0421CADF20AB6002008D6E66 /* Assets.xcassets in Resources */,
 				0421CADA20AB6002008D6E66 /* Main.storyboard in Resources */,
+				0421CB0320AB6649008D6E66 /* FurnitureCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,14 +334,120 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0806D3EFEAA30F3309B02E56 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HomeFurnitureTests/Pods-HomeFurnitureTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		11FCABE71CB3E3F6AC43D455 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HomeFurnitureTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1FA5DBE17EFA81C0BD6AF49 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HomeFurnitureTests/Pods-HomeFurnitureTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABC097254E5DB8A08AA9C9C6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HomeFurniture/Pods-HomeFurniture-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B408F506D93DD04A45B1F79C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HomeFurniture-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE60AAA110C30A6277BD9AD8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HomeFurniture/Pods-HomeFurniture-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HomeFurniture/Pods-HomeFurniture-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0421CACD20AB6002008D6E66 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0421CAD720AB6002008D6E66 /* ViewController.swift in Sources */,
+				0421CB0F20AB88F3008D6E66 /* HelperFunctions.swift in Sources */,
+				0421CB0620AB6A8C008D6E66 /* Constants.swift in Sources */,
 				0421CAD520AB6002008D6E66 /* AppDelegate.swift in Sources */,
+				0421CB0220AB6649008D6E66 /* FurnitureCollectionViewCell.swift in Sources */,
 				0421CADD20AB6002008D6E66 /* HomeFurniture.xcdatamodeld in Sources */,
+				0421CAFF20AB642A008D6E66 /* DashboardViewController.swift in Sources */,
+				0421CB0C20AB6CAD008D6E66 /* CreatFurnictureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +598,7 @@
 		};
 		0421CAF220AB6002008D6E66 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5940FA1EE230D7B6454C665D /* Pods-HomeFurniture.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -368,6 +613,7 @@
 		};
 		0421CAF320AB6002008D6E66 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F27DCDB8D16C04D445C42CA /* Pods-HomeFurniture.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -382,6 +628,7 @@
 		};
 		0421CAF520AB6002008D6E66 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1092AFCEAA16B934E90BDEFF /* Pods-HomeFurnitureTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -398,6 +645,7 @@
 		};
 		0421CAF620AB6002008D6E66 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B8E91AE0583C0E8E3EA8D59 /* Pods-HomeFurnitureTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
