@@ -30,25 +30,17 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sofa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfs-ub-0Xi">
-                                <rect key="frame" x="10" y="185" width="113.5" height="18"/>
+                                <rect key="frame" x="10" y="185" width="330" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Living room sofa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5k-LZ-Zd0">
-                                <rect key="frame" x="10" y="203" width="113.5" height="28"/>
+                                <rect key="frame" x="10" y="203" width="330" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdQ-QE-XoX">
-                                <rect key="frame" x="318" y="178" width="32" height="32"/>
-                                <state key="normal" image="unfav"/>
-                                <state key="selected" image="fav"/>
-                                <connections>
-                                    <action selector="didTapOnFavouriteButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="GTx-IU-eXb"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -56,16 +48,13 @@
                             <constraint firstItem="Tct-cC-E8G" firstAttribute="top" secondItem="WKw-Ca-ePj" secondAttribute="top" id="Cm0-mG-3ls"/>
                             <constraint firstItem="t5k-LZ-Zd0" firstAttribute="trailing" secondItem="Cfs-ub-0Xi" secondAttribute="trailing" id="IJO-h5-efP"/>
                             <constraint firstItem="t5k-LZ-Zd0" firstAttribute="top" secondItem="Cfs-ub-0Xi" secondAttribute="bottom" id="NGo-wx-HBL"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="OdQ-QE-XoX" secondAttribute="bottom" constant="5" id="P9a-Ie-tPs"/>
                             <constraint firstAttribute="bottom" secondItem="t5k-LZ-Zd0" secondAttribute="bottom" constant="5" id="PTB-JK-ehw"/>
-                            <constraint firstItem="OdQ-QE-XoX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cfs-ub-0Xi" secondAttribute="trailing" constant="10" id="Sss-tJ-t3o"/>
                             <constraint firstItem="t5k-LZ-Zd0" firstAttribute="leading" secondItem="Cfs-ub-0Xi" secondAttribute="leading" id="U7G-dO-tT6"/>
                             <constraint firstAttribute="trailing" secondItem="Tct-cC-E8G" secondAttribute="trailing" id="UFc-Me-pws"/>
                             <constraint firstItem="Cfs-ub-0Xi" firstAttribute="top" secondItem="Tct-cC-E8G" secondAttribute="bottom" constant="10" id="VYk-m3-mCA"/>
                             <constraint firstAttribute="width" priority="999" constant="350" id="VdL-bf-ZYK"/>
+                            <constraint firstItem="Tct-cC-E8G" firstAttribute="trailing" secondItem="Cfs-ub-0Xi" secondAttribute="trailing" constant="10" id="Zpr-U1-i26"/>
                             <constraint firstItem="Cfs-ub-0Xi" firstAttribute="leading" secondItem="Tct-cC-E8G" secondAttribute="leading" constant="10" id="jvv-sl-3T6"/>
-                            <constraint firstItem="OdQ-QE-XoX" firstAttribute="centerY" secondItem="Cfs-ub-0Xi" secondAttribute="centerY" id="mnD-AF-K5z"/>
-                            <constraint firstItem="OdQ-QE-XoX" firstAttribute="trailing" secondItem="Tct-cC-E8G" secondAttribute="trailing" id="nMV-85-KAq"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -81,15 +70,10 @@
             <connections>
                 <outlet property="cellWidthConstriant" destination="VdL-bf-ZYK" id="RGC-LF-g6I"/>
                 <outlet property="descriptionLabel" destination="t5k-LZ-Zd0" id="Y3l-DX-INp"/>
-                <outlet property="favouriteButton" destination="OdQ-QE-XoX" id="lcw-0C-AtW"/>
                 <outlet property="imageView" destination="Tct-cC-E8G" id="SN0-v9-MlS"/>
                 <outlet property="nameLabel" destination="Cfs-ub-0Xi" id="T5p-59-1t3"/>
             </connections>
             <point key="canvasLocation" x="192" y="145"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="fav" width="32" height="32"/>
-        <image name="unfav" width="32" height="32"/>
-    </resources>
 </document>

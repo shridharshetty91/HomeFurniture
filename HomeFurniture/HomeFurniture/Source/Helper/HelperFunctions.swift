@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 import CoreData
 
-func getAppDelegate() -> AppDelegate {
-    return UIApplication.shared.delegate as! AppDelegate
+class HelperFunctions {
+    
+    class func getAppDelegate() -> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
 }
 
-func getMainContext() -> NSManagedObjectContext {
-    return getAppDelegate().persistentContainer.viewContext
-}

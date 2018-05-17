@@ -11,8 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreatFurnictureViewController" customModule="HomeFurniture" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FurnictureDetailViewController" customModule="HomeFurniture" customModuleProvider="target">
             <connections>
+                <outlet property="deleteButton" destination="06a-fA-lcy" id="8xg-Un-FwU"/>
                 <outlet property="detailTextView" destination="wjf-X5-gq9" id="OFA-aN-fKG"/>
                 <outlet property="imageView" destination="D0v-nY-N9o" id="uAf-it-l2D"/>
                 <outlet property="nameTextField" destination="txM-qs-8W5" id="4ZP-wI-0wZ"/>
@@ -28,7 +29,7 @@
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5v5-je-NGI">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="437.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="487"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D0v-nY-N9o">
                                     <rect key="frame" x="10" y="20" width="355" height="177.5"/>
@@ -59,7 +60,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wjf-X5-gq9">
-                                    <rect key="frame" x="10" y="317.5" width="355" height="100"/>
+                                    <rect key="frame" x="10" y="317" width="355" height="100"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="100" id="sub-DI-04F"/>
@@ -67,10 +68,19 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06a-fA-lcy">
+                                    <rect key="frame" x="164.5" y="437" width="45" height="30"/>
+                                    <state key="normal" title="Delete"/>
+                                    <connections>
+                                        <action selector="didTapOnDeleteButtom:" destination="-1" eventType="touchUpInside" id="cgd-bA-ItI"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="06a-fA-lcy" firstAttribute="top" secondItem="wjf-X5-gq9" secondAttribute="bottom" constant="20" id="1dP-py-j5o"/>
                                 <constraint firstItem="haa-zm-KTk" firstAttribute="trailing" secondItem="D0v-nY-N9o" secondAttribute="trailing" id="65n-NR-wD6"/>
+                                <constraint firstItem="06a-fA-lcy" firstAttribute="centerX" secondItem="wjf-X5-gq9" secondAttribute="centerX" id="Hbg-cf-7Zn"/>
                                 <constraint firstItem="txM-qs-8W5" firstAttribute="trailing" secondItem="haa-zm-KTk" secondAttribute="trailing" id="HnQ-2y-JAN"/>
                                 <constraint firstItem="wjf-X5-gq9" firstAttribute="leading" secondItem="ktn-j1-IwY" secondAttribute="leading" id="K9S-QP-xkd"/>
                                 <constraint firstItem="haa-zm-KTk" firstAttribute="leading" secondItem="D0v-nY-N9o" secondAttribute="leading" id="LnY-Mq-qh7"/>
@@ -84,7 +94,7 @@
                                 <constraint firstItem="haa-zm-KTk" firstAttribute="top" secondItem="D0v-nY-N9o" secondAttribute="bottom" constant="20" id="jNW-6c-Nif"/>
                                 <constraint firstItem="wjf-X5-gq9" firstAttribute="top" secondItem="ktn-j1-IwY" secondAttribute="bottom" constant="8" symbolic="YES" id="kEa-Ia-lOy"/>
                                 <constraint firstAttribute="trailing" secondItem="D0v-nY-N9o" secondAttribute="trailing" constant="10" id="kHQ-H1-fwn"/>
-                                <constraint firstAttribute="bottom" secondItem="wjf-X5-gq9" secondAttribute="bottom" constant="20" id="sW8-uh-0OZ"/>
+                                <constraint firstAttribute="bottom" secondItem="06a-fA-lcy" secondAttribute="bottom" constant="20" id="s1b-fs-hSh"/>
                                 <constraint firstItem="D0v-nY-N9o" firstAttribute="top" secondItem="5v5-je-NGI" secondAttribute="top" constant="20" id="shH-MC-rQA"/>
                                 <constraint firstItem="ktn-j1-IwY" firstAttribute="top" secondItem="txM-qs-8W5" secondAttribute="bottom" constant="20" id="xd4-tk-s4Y"/>
                             </constraints>

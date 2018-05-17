@@ -17,9 +17,11 @@
 		0421CB0220AB6649008D6E66 /* FurnitureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421CB0020AB6649008D6E66 /* FurnitureCollectionViewCell.swift */; };
 		0421CB0320AB6649008D6E66 /* FurnitureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0421CB0120AB6649008D6E66 /* FurnitureCollectionViewCell.xib */; };
 		0421CB0620AB6A8C008D6E66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421CB0520AB6A8C008D6E66 /* Constants.swift */; };
-		0421CB0C20AB6CAD008D6E66 /* CreatFurnictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421CB0A20AB6CAD008D6E66 /* CreatFurnictureViewController.swift */; };
-		0421CB0D20AB6CAD008D6E66 /* CreatFurnictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0421CB0B20AB6CAD008D6E66 /* CreatFurnictureViewController.xib */; };
+		0421CB0C20AB6CAD008D6E66 /* FurnictureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421CB0A20AB6CAD008D6E66 /* FurnictureDetailViewController.swift */; };
+		0421CB0D20AB6CAD008D6E66 /* FurnictureDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0421CB0B20AB6CAD008D6E66 /* FurnictureDetailViewController.xib */; };
 		0421CB0F20AB88F3008D6E66 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421CB0E20AB88F3008D6E66 /* HelperFunctions.swift */; };
+		0421CB1120AD1292008D6E66 /* FurnitureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421CB1020AD1292008D6E66 /* FurnitureManager.swift */; };
+		0421CB1320AD1498008D6E66 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421CB1220AD1498008D6E66 /* CoreDataHelper.swift */; };
 		5D15EE4E47030F734304F7E3 /* Pods_HomeFurnitureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93BA630339E44313D3E4A615 /* Pods_HomeFurnitureTests.framework */; };
 		8BA4AA0A6B06769D105FC8E2 /* Pods_HomeFurniture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF1E129155BF9125D97F183 /* Pods_HomeFurniture.framework */; };
 /* End PBXBuildFile section */
@@ -49,9 +51,11 @@
 		0421CB0020AB6649008D6E66 /* FurnitureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnitureCollectionViewCell.swift; sourceTree = "<group>"; };
 		0421CB0120AB6649008D6E66 /* FurnitureCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FurnitureCollectionViewCell.xib; sourceTree = "<group>"; };
 		0421CB0520AB6A8C008D6E66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		0421CB0A20AB6CAD008D6E66 /* CreatFurnictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatFurnictureViewController.swift; sourceTree = "<group>"; };
-		0421CB0B20AB6CAD008D6E66 /* CreatFurnictureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatFurnictureViewController.xib; sourceTree = "<group>"; };
+		0421CB0A20AB6CAD008D6E66 /* FurnictureDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnictureDetailViewController.swift; sourceTree = "<group>"; };
+		0421CB0B20AB6CAD008D6E66 /* FurnictureDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FurnictureDetailViewController.xib; sourceTree = "<group>"; };
 		0421CB0E20AB88F3008D6E66 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		0421CB1020AD1292008D6E66 /* FurnitureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnitureManager.swift; sourceTree = "<group>"; };
+		0421CB1220AD1498008D6E66 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		1092AFCEAA16B934E90BDEFF /* Pods-HomeFurnitureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeFurnitureTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeFurnitureTests/Pods-HomeFurnitureTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2F27DCDB8D16C04D445C42CA /* Pods-HomeFurniture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeFurniture.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomeFurniture/Pods-HomeFurniture.release.xcconfig"; sourceTree = "<group>"; };
 		5940FA1EE230D7B6454C665D /* Pods-HomeFurniture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeFurniture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeFurniture/Pods-HomeFurniture.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 		0421CAFD20AB640F008D6E66 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0421CB1020AD1292008D6E66 /* FurnitureManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 			children = (
 				0421CB0520AB6A8C008D6E66 /* Constants.swift */,
 				0421CB0E20AB88F3008D6E66 /* HelperFunctions.swift */,
+				0421CB1220AD1498008D6E66 /* CoreDataHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -189,7 +195,7 @@
 		0421CB0720AB6C38008D6E66 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0421CB0A20AB6CAD008D6E66 /* CreatFurnictureViewController.swift */,
+				0421CB0A20AB6CAD008D6E66 /* FurnictureDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -197,7 +203,7 @@
 		0421CB0820AB6C3F008D6E66 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0421CB0B20AB6CAD008D6E66 /* CreatFurnictureViewController.xib */,
+				0421CB0B20AB6CAD008D6E66 /* FurnictureDetailViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -317,7 +323,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0421CB0D20AB6CAD008D6E66 /* CreatFurnictureViewController.xib in Resources */,
+				0421CB0D20AB6CAD008D6E66 /* FurnictureDetailViewController.xib in Resources */,
 				0421CAE220AB6002008D6E66 /* LaunchScreen.storyboard in Resources */,
 				0421CADF20AB6002008D6E66 /* Assets.xcassets in Resources */,
 				0421CADA20AB6002008D6E66 /* Main.storyboard in Resources */,
@@ -441,13 +447,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0421CB1120AD1292008D6E66 /* FurnitureManager.swift in Sources */,
 				0421CB0F20AB88F3008D6E66 /* HelperFunctions.swift in Sources */,
 				0421CB0620AB6A8C008D6E66 /* Constants.swift in Sources */,
 				0421CAD520AB6002008D6E66 /* AppDelegate.swift in Sources */,
 				0421CB0220AB6649008D6E66 /* FurnitureCollectionViewCell.swift in Sources */,
 				0421CADD20AB6002008D6E66 /* HomeFurniture.xcdatamodeld in Sources */,
+				0421CB1320AD1498008D6E66 /* CoreDataHelper.swift in Sources */,
 				0421CAFF20AB642A008D6E66 /* DashboardViewController.swift in Sources */,
-				0421CB0C20AB6CAD008D6E66 /* CreatFurnictureViewController.swift in Sources */,
+				0421CB0C20AB6CAD008D6E66 /* FurnictureDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +611,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HomeFurniture/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HomeFurniture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -618,6 +627,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HomeFurniture/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HomeFurniture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
