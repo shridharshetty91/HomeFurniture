@@ -154,7 +154,7 @@ extension FurnictureDetailViewController {
     }
     
     private func setBorderAndCornerRadius(view: UIView) {
-        view.layer.borderWidth = 1
+        view.layer.borderWidth = 1 / UIScreen.main.scale
         view.layer.borderColor = UIColor.lightGray.cgColor
         view.layer.cornerRadius = 3
     }

@@ -116,6 +116,7 @@ extension FurnictureListViewController {
 extension FurnictureListViewController {
     
     private func initialzeFurnictureListViewController() {
+        self.automaticallyAdjustsScrollViewInsets = false
         initializeFlowLayout()
         registerCells()
     }
