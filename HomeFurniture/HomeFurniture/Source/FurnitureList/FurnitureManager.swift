@@ -2,14 +2,14 @@
 //  FurnitureManager.swift
 //  HomeFurniture
 //
-//  Created by Shridhar on 17/05/18.
+//  Created by Shridhar on 5/19/18.
 //
 
-import UIKit
+import Foundation
 import CoreData
 
 class FurnitureManager {
-
+    
     var userFurniture: UserFurniture!
     
     private static var sharedInstance : FurnitureManager!
@@ -48,23 +48,24 @@ class FurnitureManager {
     
     func addFurniture(name: String, details: String?, imageData: Data) -> Furniture {
         let furniture = Furniture(context: CoreDataHelper.managedContext)
-        furniture.name = name
-        furniture.details = details
-        furniture.image = imageData
         furniture.createdDate = Date()
-        furniture.updatedDate = Date()
+        setFurnitureValues(furniture: furniture, name: name, details: details, imageData: imageData)
         userFurniture.addToFurnitures(furniture)
         CoreDataHelper.saveContext()
         return furniture
     }
     
     func updateFurniture(furniture: Furniture, name: String, details: String?, imageData: Data) -> Furniture {
+        setFurnitureValues(furniture: furniture, name: name, details: details, imageData: imageData)
+        CoreDataHelper.saveContext()
+        return furniture
+    }
+    
+    private func setFurnitureValues(furniture: Furniture, name: String, details: String?, imageData: Data) {
         furniture.name = name
         furniture.details = details
         furniture.image = imageData
         furniture.updatedDate = Date()
-        CoreDataHelper.saveContext()
-        return furniture
     }
     
     func isFurnitureExists(furnitureWithName: String) -> Bool {

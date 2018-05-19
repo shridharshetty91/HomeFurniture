@@ -2,7 +2,7 @@
 //  FurnictureDetailViewController.swift
 //  HomeFurniture
 //
-//  Created by Shridhar on 16/05/18.
+//  Created by Shridhar on 5/19/18.
 //
 
 import UIKit
@@ -19,27 +19,12 @@ class FurnictureDetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var detailTextView: UITextView!
-    
     @IBOutlet weak var deleteButton: UIButton!
     
     private var furniture: Furniture?
     private var actionType = FurnictureDetailActionType.invalid
     
     private var FurnictureDetailViewControllerNibName = "FurnictureDetailViewController"
-    
-    private var image: UIImage? {
-        didSet {
-            guard let _ = image else {
-                imageView.image = nil
-                return
-            }
-            imageView.image = image
-        }
-    }
-    
-    var furnitureManager: FurnitureManager {
-        return FurnitureManager.shared
-    }
     
     init(actionType: FurnictureDetailActionType, furniture: Furniture?) {
         super.init(nibName: FurnictureDetailViewControllerNibName, bundle: nil)
@@ -63,6 +48,20 @@ class FurnictureDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    private var image: UIImage? {
+        didSet {
+            guard let _ = image else {
+                imageView.image = nil
+                return
+            }
+            imageView.image = image
+        }
+    }
+    
+    var furnitureManager: FurnitureManager {
+        return FurnitureManager.shared
+    }
 }
 
 // MARK: - Button Actions
@@ -80,7 +79,7 @@ extension FurnictureDetailViewController {
         
         let alertController = UIAlertController(title: nil, message: AlertConstants.deleteFurnitureAlert, preferredStyle: .alert)
         
-        let noAction = UIAlertAction(title: AlertConstants.no, style: .cancel, handler: nil)        
+        let noAction = UIAlertAction(title: AlertConstants.no, style: .cancel, handler: nil)
         alertController.addAction(noAction)
         
         let deletAction = UIAlertAction(title: AlertConstants.yes, style: UIAlertActionStyle.destructive, handler: { (action) in
@@ -167,26 +166,34 @@ extension FurnictureDetailViewController {
                 return
         }
         
-        guard let name = nameTextField.text, name.isEmpty == false else {
+        var name = nameTextField.text ?? ""
+        name = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        guard name.isEmpty == false else {
             showError(message: AlertConstants.enterName)
             return
         }
         
-        if furnitureManager.isFurnitureExists(furnitureWithName: name) {
-            let alertController = UIAlertController(title: nil, message: AlertConstants.furnutureExists, preferredStyle: .alert)
-            
-            let noAction = UIAlertAction(title: AlertConstants.no, style: .cancel, handler: nil)
-            alertController.addAction(noAction)
-            
-            let deletAction = UIAlertAction(title: AlertConstants.continueText, style: UIAlertActionStyle.destructive, handler: { (action) in
-                self.addOrUpdateFurniture(name: name, details: self.detailTextView.text, imageData:  imageData)
-            })
-            alertController.addAction(deletAction)
-            
-            self.present(alertController, animated: true, completion: nil)
+        if (actionType == .edit && furniture?.name != name) || actionType == .addNew {
+            if furnitureManager.isFurnitureExists(furnitureWithName: name) {
+                let alertController = UIAlertController(title: nil, message: AlertConstants.furnutureExists, preferredStyle: .alert)
+                
+                let noAction = UIAlertAction(title: AlertConstants.no, style: .cancel, handler: nil)
+                alertController.addAction(noAction)
+                
+                let deletAction = UIAlertAction(title: AlertConstants.continueText, style: UIAlertActionStyle.destructive, handler: { (action) in
+                    self.addOrUpdateFurniture(name: name, details: self.detailTextView.text, imageData:  imageData)
+                })
+                alertController.addAction(deletAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+            } else {
+                addOrUpdateFurniture(name: name, details: detailTextView.text, imageData:  imageData)
+            }
         } else {
             addOrUpdateFurniture(name: name, details: detailTextView.text, imageData:  imageData)
         }
+        
     }
     
     func addOrUpdateFurniture(name: String, details: String?, imageData: Data) {

@@ -2,7 +2,7 @@
 //  Constants.swift
 //  HomeFurniture
 //
-//  Created by Shridhar on 16/05/18.
+//  Created by Shridhar on 5/19/18.
 //
 
 import UIKit
@@ -35,5 +35,3 @@ class AlertConstants {
     
     private init() {}
 }
-
-

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17D47" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Furniture" representedClassName="Furniture" syncable="YES" codeGenerationType="class">
         <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updatedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="userFurnicture" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserFurniture" syncable="YES"/>
+        <relationship name="userFurnicture" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="UserFurniture" syncable="YES"/>
     </entity>
     <entity name="UserFurniture" representedClassName="UserFurniture" syncable="YES" codeGenerationType="class">
-        <relationship name="furnitures" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Furniture" syncable="YES"/>
+        <relationship name="furnitures" optional="YES" toMany="YES" deletionRule="No Action" ordered="YES" destinationEntity="Furniture" syncable="YES"/>
     </entity>
     <elements>
         <element name="Furniture" positionX="-63" positionY="-18" width="128" height="135"/>
-        <element name="UserFurniture" positionX="-45" positionY="45" width="128" height="60"/>
+        <element name="UserFurniture" positionX="-54" positionY="-9" width="128" height="60"/>
     </elements>
 </model>

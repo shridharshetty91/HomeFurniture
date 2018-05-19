@@ -2,12 +2,11 @@
 //  HelperFunctions.swift
 //  HomeFurniture
 //
-//  Created by Shridhar on 16/05/18.
+//  Created by Shridhar on 5/19/18.
 //
 
 import Foundation
 import UIKit
-import CoreData
 
 class HelperFunctions {
     
@@ -15,4 +14,3 @@ class HelperFunctions {
         return UIApplication.shared.delegate as! AppDelegate
     }
 }
-

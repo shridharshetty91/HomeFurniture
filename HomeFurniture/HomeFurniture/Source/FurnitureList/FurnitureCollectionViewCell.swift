@@ -2,7 +2,7 @@
 //  FurnitureCollectionViewCell.swift
 //  HomeFurniture
 //
-//  Created by Shridhar on 16/05/18.
+//  Created by Shridhar on 5/19/18.
 //
 
 import UIKit
@@ -32,8 +32,15 @@ class FurnitureCollectionViewCell: UICollectionViewCell {
         nameLabel.text = data.name
         descriptionLabel.text = data.details
         
-        if let imageData = data.image {
-            imageView.image = UIImage(data: imageData)
+        imageView.image = nil
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive).async {
+            if let imageData = data.image, let image = UIImage(data: imageData) {
+                DispatchQueue.main.async {
+                    self.imageView.image = image
+                }
+            }
         }
+        
+        self.layoutIfNeeded()
     }
 }

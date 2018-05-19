@@ -1,14 +1,13 @@
 //
-//  DashboardViewController.swift
+//  FurnictureListViewController.swift
 //  HomeFurniture
 //
-//  Created by Shridhar on 16/05/18.
+//  Created by Shridhar on 5/19/18.
 //
 
 import UIKit
 
-class DashboardViewController: UIViewController {
-
+class FurnictureListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var messagelabel: UILabel!
@@ -18,12 +17,12 @@ class DashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
-        initialzeDashboardViewController()
+        initialzeFurnictureListViewController()
     }
-
+    
     deinit {
         //Destroying and single instance here as it was created here
         CoreDataHelper.destroyInstance()
@@ -41,8 +40,7 @@ class DashboardViewController: UIViewController {
     override func viewWillTransition(to size: CGSize,
                                      with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        
-        reloadData()
+        self.performSelector(onMainThread: #selector(reloadData), with: nil, waitUntilDone: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,10 +48,16 @@ class DashboardViewController: UIViewController {
         
         reloadData()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        flowLayout.invalidateLayout()
+    }
 }
 
 // MARK: - UICollectionViewDataSource
-extension DashboardViewController: UICollectionViewDataSource {
+extension FurnictureListViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let furnitureCount = furnitureManager.userFurniture?.furnitures?.count else {
@@ -65,10 +69,9 @@ extension DashboardViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: furnitureCollectionViewCellIdentifier, for: indexPath) as! FurnitureCollectionViewCell
         
+        cell.cellWidthConstriant.constant = getCellWidth(collectionView)
         cell.data = furnitureManager.userFurniture?.furnitures?.object(at: indexPath.row) as? Furniture
         
-        cell.cellWidthConstriant.constant = getCellWidth(collectionView)
-
         return cell
     }
     
@@ -90,15 +93,21 @@ extension DashboardViewController: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegate
-extension DashboardViewController: UICollectionViewDelegate {
+extension FurnictureListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let furniture = furnitureManager.userFurniture?.furnitures?.object(at: indexPath.row) as? Furniture
         pushCreatFurnictureVC(actionType: .edit, furniture: furniture, animate: true)
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        let furnitureCell = cell as! FurnitureCollectionViewCell
+//        furnitureCell.cellWidthConstriant.constant = getCellWidth(collectionView)
+//        furnitureCell.layoutIfNeeded()
+//    }
 }
 
 // MARK: - Button Actions
-extension DashboardViewController {
+extension FurnictureListViewController {
     
     @IBAction func didTapAddButton(_ sender: UIBarButtonItem) {
         pushCreatFurnictureVC(actionType: .addNew, furniture: nil, animate: false)
@@ -106,24 +115,25 @@ extension DashboardViewController {
 }
 
 // MARK: - Private Methods
-extension DashboardViewController {
+extension FurnictureListViewController {
     
-    private func initialzeDashboardViewController() {
+    private func initialzeFurnictureListViewController() {
         initializeFlowLayout()
         registerCells()
     }
     
     private func initializeFlowLayout() {
         flowLayout.itemSize = UICollectionViewFlowLayoutAutomaticSize
-        flowLayout.estimatedItemSize = CGSize(width: 350, height: 200)
+        flowLayout.estimatedItemSize = CGSize(width: 350, height: 250)
     }
     
     private func registerCells() {
         collectionView.register(UINib(nibName: furnitureCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: furnitureCollectionViewCellIdentifier)
     }
     
-    func reloadData() {
+    @objc func reloadData() {
         showOrHideMessageLabel()
+        flowLayout.invalidateLayout()
         collectionView.reloadData()
     }
     
