@@ -69,10 +69,22 @@ extension FurnictureListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: furnitureCollectionViewCellIdentifier, for: indexPath) as! FurnitureCollectionViewCell
         
-        cell.cellWidthConstriant.constant = getCellWidth(collectionView)
         cell.data = furnitureManager.userFurniture?.furnitures?.object(at: indexPath.row) as? Furniture
         
         return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+extension FurnictureListViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let furniture = furnitureManager.userFurniture?.furnitures?.object(at: indexPath.row) as? Furniture
+        pushCreatFurnictureVC(actionType: .edit, furniture: furniture, animate: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = getCellWidth(collectionView)
+        return CGSize(width: width, height: width / 2 + 50)
     }
     
     private func getCellWidth(_ collectionView: UICollectionView) -> CGFloat {
@@ -92,20 +104,6 @@ extension FurnictureListViewController: UICollectionViewDataSource {
     }
 }
 
-// MARK: - UICollectionViewDelegate
-extension FurnictureListViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let furniture = furnitureManager.userFurniture?.furnitures?.object(at: indexPath.row) as? Furniture
-        pushCreatFurnictureVC(actionType: .edit, furniture: furniture, animate: true)
-    }
-    
-//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        let furnitureCell = cell as! FurnitureCollectionViewCell
-//        furnitureCell.cellWidthConstriant.constant = getCellWidth(collectionView)
-//        furnitureCell.layoutIfNeeded()
-//    }
-}
-
 // MARK: - Button Actions
 extension FurnictureListViewController {
     
@@ -123,8 +121,10 @@ extension FurnictureListViewController {
     }
     
     private func initializeFlowLayout() {
-        flowLayout.itemSize = UICollectionViewFlowLayoutAutomaticSize
-        flowLayout.estimatedItemSize = CGSize(width: 350, height: 250)
+        flowLayout.minimumInteritemSpacing = 5
+        flowLayout.minimumLineSpacing = 5
+        flowLayout.sectionInset = UIEdgeInsets.zero
+        
     }
     
     private func registerCells() {

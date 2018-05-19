@@ -8,8 +8,6 @@
 import UIKit
 
 class FurnitureCollectionViewCell: UICollectionViewCell {
-
-    @IBOutlet weak var cellWidthConstriant: NSLayoutConstraint!
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -40,7 +38,5 @@ class FurnitureCollectionViewCell: UICollectionViewCell {
                 }
             }
         }
-        
-        self.layoutIfNeeded()
     }
 }

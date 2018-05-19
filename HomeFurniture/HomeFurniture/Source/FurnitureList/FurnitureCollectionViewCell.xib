@@ -21,7 +21,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N9F-Ej-VoV">
-                        <rect key="frame" x="0.0" y="0.0" width="350" height="226"/>
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="225"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="7xN-wF-pcp">
                                 <rect key="frame" x="0.0" y="0.0" width="350" height="175"/>
@@ -30,18 +30,18 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sofa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5G-tU-JEP">
-                                <rect key="frame" x="10" y="185" width="330" height="18"/>
+                                <rect key="frame" x="10" y="175" width="330" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="uc6-Ux-wSe"/>
+                                    <constraint firstAttribute="height" constant="25" id="uc6-Ux-wSe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Living room sofa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htZ-tI-tRq">
-                                <rect key="frame" x="10" y="203" width="330" height="18"/>
+                                <rect key="frame" x="10" y="200" width="330" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="spK-n5-FJQ"/>
+                                    <constraint firstAttribute="height" constant="25" id="spK-n5-FJQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -53,14 +53,13 @@
                             <constraint firstItem="htZ-tI-tRq" firstAttribute="trailing" secondItem="o5G-tU-JEP" secondAttribute="trailing" id="A8G-wJ-q3N"/>
                             <constraint firstItem="7xN-wF-pcp" firstAttribute="trailing" secondItem="o5G-tU-JEP" secondAttribute="trailing" constant="10" id="IxT-6Q-kcf"/>
                             <constraint firstAttribute="trailing" secondItem="7xN-wF-pcp" secondAttribute="trailing" id="SNI-x4-i0t"/>
-                            <constraint firstAttribute="width" priority="999" constant="350" id="T05-4V-66C"/>
                             <constraint firstItem="htZ-tI-tRq" firstAttribute="leading" secondItem="o5G-tU-JEP" secondAttribute="leading" id="U8b-cu-epx"/>
                             <constraint firstItem="o5G-tU-JEP" firstAttribute="leading" secondItem="7xN-wF-pcp" secondAttribute="leading" constant="10" id="Y4m-nt-YQm"/>
                             <constraint firstItem="7xN-wF-pcp" firstAttribute="leading" secondItem="N9F-Ej-VoV" secondAttribute="leading" id="amO-yd-laH"/>
                             <constraint firstItem="7xN-wF-pcp" firstAttribute="top" secondItem="N9F-Ej-VoV" secondAttribute="top" id="dOg-ny-ULS"/>
-                            <constraint firstItem="o5G-tU-JEP" firstAttribute="top" secondItem="7xN-wF-pcp" secondAttribute="bottom" constant="10" id="qzV-lQ-0KK"/>
+                            <constraint firstItem="o5G-tU-JEP" firstAttribute="top" secondItem="7xN-wF-pcp" secondAttribute="bottom" id="qzV-lQ-0KK"/>
                             <constraint firstItem="htZ-tI-tRq" firstAttribute="top" secondItem="o5G-tU-JEP" secondAttribute="bottom" id="vdy-yi-2Hf"/>
-                            <constraint firstAttribute="bottom" secondItem="htZ-tI-tRq" secondAttribute="bottom" constant="5" id="x0Q-AZ-qRJ"/>
+                            <constraint firstAttribute="bottom" secondItem="htZ-tI-tRq" secondAttribute="bottom" id="x0Q-AZ-qRJ"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -74,7 +73,6 @@
             <viewLayoutGuide key="safeArea" id="3AK-OC-rF3"/>
             <size key="customSize" width="367" height="223"/>
             <connections>
-                <outlet property="cellWidthConstriant" destination="T05-4V-66C" id="oM7-Lq-3Gg"/>
                 <outlet property="descriptionLabel" destination="htZ-tI-tRq" id="FTj-vm-Xer"/>
                 <outlet property="imageView" destination="7xN-wF-pcp" id="gyV-Yq-a2c"/>
                 <outlet property="nameLabel" destination="o5G-tU-JEP" id="b1D-p9-Niy"/>
