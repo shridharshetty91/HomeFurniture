@@ -17,10 +17,15 @@
 		0CD4BBE020AFB6AE002E4600 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4BBDF20AFB6AE002E4600 /* CoreDataHelper.swift */; };
 		0CD815A020AFB7340054B7E5 /* FurnictureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD8159E20AFB7340054B7E5 /* FurnictureDetailViewController.swift */; };
 		0CD815A120AFB7340054B7E5 /* FurnictureDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD8159F20AFB7340054B7E5 /* FurnictureDetailViewController.xib */; };
-		0CD815A720AFB90F0054B7E5 /* FurnictureListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD815A520AFB90F0054B7E5 /* FurnictureListViewController.swift */; };
+		0CD815A720AFB90F0054B7E5 /* FurnitureListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD815A520AFB90F0054B7E5 /* FurnitureListViewController.swift */; };
 		0CD815AB20AFB9860054B7E5 /* FurnitureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD815A920AFB9860054B7E5 /* FurnitureCollectionViewCell.swift */; };
 		0CD815AC20AFB9860054B7E5 /* FurnitureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD815AA20AFB9860054B7E5 /* FurnitureCollectionViewCell.xib */; };
 		0CD815AE20AFBA960054B7E5 /* FurnitureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD815AD20AFBA960054B7E5 /* FurnitureManager.swift */; };
+		0CF701F520B1EE7900BEB34D /* FurnitureCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF701F420B1EE7900BEB34D /* FurnitureCollectionView.swift */; };
+		0CF701FA20B1F5BC00BEB34D /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF701F920B1F5BC00BEB34D /* UIImage.swift */; };
+		0CF701FC20B1F63600BEB34D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF701FB20B1F63600BEB34D /* String.swift */; };
+		0CF701FE20B2091600BEB34D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF701FD20B2091600BEB34D /* UIView.swift */; };
+		0CF7020020B20D5700BEB34D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF701FF20B20D5700BEB34D /* UIViewController.swift */; };
 		2D79F7995FC5E69B51F2BF06 /* Pods_HomeFurniture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A13B4AB5A64271AEE77738FB /* Pods_HomeFurniture.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,10 +42,15 @@
 		0CD4BBDF20AFB6AE002E4600 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		0CD8159E20AFB7340054B7E5 /* FurnictureDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnictureDetailViewController.swift; sourceTree = "<group>"; };
 		0CD8159F20AFB7340054B7E5 /* FurnictureDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FurnictureDetailViewController.xib; sourceTree = "<group>"; };
-		0CD815A520AFB90F0054B7E5 /* FurnictureListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnictureListViewController.swift; sourceTree = "<group>"; };
+		0CD815A520AFB90F0054B7E5 /* FurnitureListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnitureListViewController.swift; sourceTree = "<group>"; };
 		0CD815A920AFB9860054B7E5 /* FurnitureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnitureCollectionViewCell.swift; sourceTree = "<group>"; };
 		0CD815AA20AFB9860054B7E5 /* FurnitureCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FurnitureCollectionViewCell.xib; sourceTree = "<group>"; };
 		0CD815AD20AFBA960054B7E5 /* FurnitureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnitureManager.swift; sourceTree = "<group>"; };
+		0CF701F420B1EE7900BEB34D /* FurnitureCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurnitureCollectionView.swift; sourceTree = "<group>"; };
+		0CF701F920B1F5BC00BEB34D /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		0CF701FB20B1F63600BEB34D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		0CF701FD20B2091600BEB34D /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		0CF701FF20B20D5700BEB34D /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		538B50F8B83471827B557B49 /* Pods-HomeFurniture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeFurniture.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomeFurniture/Pods-HomeFurniture.release.xcconfig"; sourceTree = "<group>"; };
 		A13B4AB5A64271AEE77738FB /* Pods_HomeFurniture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeFurniture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC91C4F98E90DBB9203AAE2C /* Pods-HomeFurniture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeFurniture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeFurniture/Pods-HomeFurniture.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +111,7 @@
 		0CD4BBD720AFB5CA002E4600 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				0CF701F620B1F4B700BEB34D /* Common */,
 				0CD4BBDA20AFB601002E4600 /* Helper */,
 				0CD4BBD920AFB5DD002E4600 /* FurnitureDetails */,
 				0CD4BBD820AFB5D4002E4600 /* FurnitureList */,
@@ -111,7 +122,6 @@
 		0CD4BBD820AFB5D4002E4600 /* FurnitureList */ = {
 			isa = PBXGroup;
 			children = (
-				0CD815A420AFB8F70054B7E5 /* Model */,
 				0CD815A320AFB8EC0054B7E5 /* View */,
 				0CD815A220AFB8E40054B7E5 /* Controller */,
 			);
@@ -121,7 +131,6 @@
 		0CD4BBD920AFB5DD002E4600 /* FurnitureDetails */ = {
 			isa = PBXGroup;
 			children = (
-				0CD4BBE120AFB6C8002E4600 /* Model */,
 				0CD4BBE220AFB6CF002E4600 /* View */,
 				0CD4BBE320AFB6D6002E4600 /* Controller */,
 			);
@@ -131,18 +140,10 @@
 		0CD4BBDA20AFB601002E4600 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				0CD4BBDB20AFB620002E4600 /* Constants.swift */,
-				0CD4BBDD20AFB646002E4600 /* HelperFunctions.swift */,
-				0CD4BBDF20AFB6AE002E4600 /* CoreDataHelper.swift */,
+				0CF701F820B1F59400BEB34D /* Extension */,
+				0CF701F720B1F58500BEB34D /* Model */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		0CD4BBE120AFB6C8002E4600 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		0CD4BBE220AFB6CF002E4600 /* View */ = {
@@ -164,7 +165,7 @@
 		0CD815A220AFB8E40054B7E5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0CD815A520AFB90F0054B7E5 /* FurnictureListViewController.swift */,
+				0CD815A520AFB90F0054B7E5 /* FurnitureListViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -172,18 +173,48 @@
 		0CD815A320AFB8EC0054B7E5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0CF701F420B1EE7900BEB34D /* FurnitureCollectionView.swift */,
 				0CD815A920AFB9860054B7E5 /* FurnitureCollectionViewCell.swift */,
 				0CD815AA20AFB9860054B7E5 /* FurnitureCollectionViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
 		};
-		0CD815A420AFB8F70054B7E5 /* Model */ = {
+		0CF701F320B1EC3000BEB34D /* Manager */ = {
 			isa = PBXGroup;
 			children = (
 				0CD815AD20AFBA960054B7E5 /* FurnitureManager.swift */,
 			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		0CF701F620B1F4B700BEB34D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0CF701F320B1EC3000BEB34D /* Manager */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0CF701F720B1F58500BEB34D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0CD4BBDF20AFB6AE002E4600 /* CoreDataHelper.swift */,
+				0CD4BBDD20AFB646002E4600 /* HelperFunctions.swift */,
+				0CD4BBDB20AFB620002E4600 /* Constants.swift */,
+			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		0CF701F820B1F59400BEB34D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0CF701F920B1F5BC00BEB34D /* UIImage.swift */,
+				0CF701FB20B1F63600BEB34D /* String.swift */,
+				0CF701FD20B2091600BEB34D /* UIView.swift */,
+				0CF701FF20B20D5700BEB34D /* UIViewController.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 		91F05B3BAB58565E915BFF5C /* Pods */ = {
@@ -324,15 +355,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CF7020020B20D5700BEB34D /* UIViewController.swift in Sources */,
+				0CF701FE20B2091600BEB34D /* UIView.swift in Sources */,
 				0CD815A020AFB7340054B7E5 /* FurnictureDetailViewController.swift in Sources */,
 				0CD4BBE020AFB6AE002E4600 /* CoreDataHelper.swift in Sources */,
 				0CD4BBC220AFB45E002E4600 /* AppDelegate.swift in Sources */,
-				0CD815A720AFB90F0054B7E5 /* FurnictureListViewController.swift in Sources */,
+				0CD815A720AFB90F0054B7E5 /* FurnitureListViewController.swift in Sources */,
+				0CF701FC20B1F63600BEB34D /* String.swift in Sources */,
 				0CD4BBDE20AFB646002E4600 /* HelperFunctions.swift in Sources */,
 				0CD815AB20AFB9860054B7E5 /* FurnitureCollectionViewCell.swift in Sources */,
 				0CD4BBCA20AFB45E002E4600 /* HomeFurniture.xcdatamodeld in Sources */,
 				0CD4BBDC20AFB620002E4600 /* Constants.swift in Sources */,
 				0CD815AE20AFBA960054B7E5 /* FurnitureManager.swift in Sources */,
+				0CF701FA20B1F5BC00BEB34D /* UIImage.swift in Sources */,
+				0CF701F520B1EE7900BEB34D /* FurnitureCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
