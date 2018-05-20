@@ -10,61 +10,63 @@ import CoreData
 
 class FurnitureManager {
     
-    var userFurniture: UserFurniture!
-    
-    private static var sharedInstance : FurnitureManager!
-    
-    class var shared: FurnitureManager {
-        if (sharedInstance == nil) {
-            sharedInstance = FurnitureManager()
-        }
-        return sharedInstance
-    }
-    
-    private init() {
-        initializeFurnitureManager()
-    }
-    
-    private func initializeFurnitureManager() {
-        
+    lazy private (set) var userFurniture: UserFurniture? = {
         do {
             let fetchedObjects = try CoreDataHelper.managedContext.fetch(UserFurniture.fetchRequest()) as! [UserFurniture]
             if (fetchedObjects.count == 0) { //DB is Empty
-                self.userFurniture = UserFurniture(context: CoreDataHelper.managedContext)
+                return UserFurniture(context: CoreDataHelper.managedContext)
             }
             else{
-                self.userFurniture = fetchedObjects.first!
+                return fetchedObjects.first!
             }
         } catch {
-            self.userFurniture = UserFurniture(context: CoreDataHelper.managedContext)
+            print(error.localizedDescription)
         }
+        return nil
+    }()
+    
+    func validate(input: FurnitureInput) -> Bool {
+        if input.name == nil || input.name!.isEmpty ||
+            input.imageData == nil{
+            return false
+        }
+        return true
+    }
+    
+    func hasChanges(furniture: Furniture, input: FurnitureInput) -> Bool {
+        if furniture.name != input.name ||
+            furniture.details != input.details {
+            return true
+        }
+        
+        return false
     }
     
     func deleteFurniture(furniture: Furniture) {
-        userFurniture.removeFromFurnitures(furniture)
+        userFurniture?.removeFromFurnitures(furniture)
         CoreDataHelper.managedContext.delete(furniture)
         CoreDataHelper.saveContext()
     }
     
-    func addFurniture(name: String, details: String?, imageData: Data) -> Furniture {
+    func addFurniture(input: FurnitureInput) -> Furniture {
         let furniture = Furniture(context: CoreDataHelper.managedContext)
         furniture.createdDate = Date()
-        setFurnitureValues(furniture: furniture, name: name, details: details, imageData: imageData)
-        userFurniture.addToFurnitures(furniture)
+        setFurnitureValues(furniture: furniture, input: input)
+        userFurniture?.addToFurnitures(furniture)
         CoreDataHelper.saveContext()
         return furniture
     }
     
-    func updateFurniture(furniture: Furniture, name: String, details: String?, imageData: Data) -> Furniture {
-        setFurnitureValues(furniture: furniture, name: name, details: details, imageData: imageData)
+    func updateFurniture(furniture: Furniture, input: FurnitureInput) -> Furniture {
+        setFurnitureValues(furniture: furniture, input: input)
         CoreDataHelper.saveContext()
         return furniture
     }
     
-    private func setFurnitureValues(furniture: Furniture, name: String, details: String?, imageData: Data) {
-        furniture.name = name
-        furniture.details = details
-        furniture.image = imageData
+    private func setFurnitureValues(furniture: Furniture, input: FurnitureInput) {
+        furniture.name = input.name
+        furniture.details = input.details
+        furniture.imageData = input.imageData
         furniture.updatedDate = Date()
     }
     
@@ -84,5 +86,14 @@ class FurnitureManager {
         
         return isExists
     }
+}
+
+struct FurnitureInput {
+    var name: String?
+    var details: String?
+    var imageData: Data?
     
+    init() {
+        
+    }
 }

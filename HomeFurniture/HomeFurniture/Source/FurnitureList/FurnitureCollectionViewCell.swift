@@ -29,14 +29,6 @@ class FurnitureCollectionViewCell: UICollectionViewCell {
         
         nameLabel.text = data.name
         descriptionLabel.text = data.details
-        
-        imageView.image = nil
-        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive).async {
-            if let imageData = data.image, let image = UIImage(data: imageData) {
-                DispatchQueue.main.async {
-                    self.imageView.image = image
-                }
-            }
-        }
+        self.imageView.image = data.imageData?.image
     }
 }

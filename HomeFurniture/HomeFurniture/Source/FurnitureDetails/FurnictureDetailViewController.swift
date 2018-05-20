@@ -14,23 +14,30 @@ enum FurnictureDetailActionType {
     case invalid
 }
 
+struct FurnictureDetailVCInputs {
+    var furnitureManager: FurnitureManager!
+    var furniture: Furniture?
+    var actionType = FurnictureDetailActionType.invalid
+    
+    fileprivate var imageChanged = false
+    fileprivate var image: UIImage?
+}
+
 class FurnictureDetailViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var detailTextView: UITextView!
     @IBOutlet weak var deleteButton: UIButton!
+    private var addOrUpdate: UIBarButtonItem?
     
-    private var furniture: Furniture?
-    private var actionType = FurnictureDetailActionType.invalid
-    
+    private var inputs: FurnictureDetailVCInputs!
     private var FurnictureDetailViewControllerNibName = "FurnictureDetailViewController"
     
-    init(actionType: FurnictureDetailActionType, furniture: Furniture?) {
+    init(inputs: FurnictureDetailVCInputs) {
         super.init(nibName: FurnictureDetailViewControllerNibName, bundle: nil)
         
-        self.actionType = actionType
-        self.furniture = furniture
+        self.inputs = inputs
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -44,23 +51,15 @@ class FurnictureDetailViewController: UIViewController {
         initializeFurnictureDetailViewController()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        registerNotifications()
     }
     
-    private var image: UIImage? {
-        didSet {
-            guard let _ = image else {
-                imageView.image = nil
-                return
-            }
-            imageView.image = image
-        }
-    }
-    
-    var furnitureManager: FurnitureManager {
-        return FurnitureManager.shared
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        deregisterNotifications()
     }
 }
 
@@ -72,23 +71,14 @@ extension FurnictureDetailViewController {
     
     @objc func didTapOnAddOrUpdateButton() {
         
-        validateAndUpdateFurniture()
+        addOrUpdateFurniture()
     }
     
     @IBAction func didTapOnDeleteButtom(_ sender: UIButton) {
-        
-        let alertController = UIAlertController(title: nil, message: AlertConstants.deleteFurnitureAlert, preferredStyle: .alert)
-        
-        let noAction = UIAlertAction(title: AlertConstants.no, style: .cancel, handler: nil)
-        alertController.addAction(noAction)
-        
-        let deletAction = UIAlertAction(title: AlertConstants.yes, style: UIAlertActionStyle.destructive, handler: { (action) in
-            self.furnitureManager.deleteFurniture(furniture: self.furniture!)
+        showAlert(title: nil, message: AlertConstants.deleteFurnitureAlert, positiveAction: AlertConstants.no, positiveHandler: nil, negativeAction: AlertConstants.yes, negativeHandler: { () in
+            self.inputs.furnitureManager.deleteFurniture(furniture: self.inputs.furniture!)
             self.navigationController?.popViewController(animated: true)
         })
-        alertController.addAction(deletAction)
-        
-        self.present(alertController, animated: true, completion: nil)
     }
 }
 
@@ -99,8 +89,17 @@ extension FurnictureDetailViewController : UIImagePickerControllerDelegate, UINa
         guard let newImage = info[UIImagePickerControllerEditedImage] as? UIImage else {
             return
         }
-        image = newImage
+        
+        inputs.imageChanged = true
+        setImage(image: newImage)
         picker.dismiss(animated: false, completion: nil)
+    }
+}
+
+//MARK: - UITextViewDelegate
+extension FurnictureDetailViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        validateInputs()
     }
 }
 
@@ -111,37 +110,32 @@ extension FurnictureDetailViewController {
         setData()
         initialzeNavigationBar()
         configureLayout()
+        validateInputs()
     }
     
     private func setData() {
-        if actionType == .edit {
+        if self.inputs.actionType == .edit {
             deleteButton.isHidden = false
             
-            if let furniture = furniture {
-                nameTextField.text = furniture.name
-                detailTextView.text = furniture.details
-                
-                if let imageData = furniture.image {
-                    image = UIImage(data: imageData)
-                }
+            guard let furniture = self.inputs.furniture else {
+                return
             }
-        } else if actionType == .addNew {
+            
+            nameTextField.text = furniture.name
+            detailTextView.text = furniture.details
+            setImage(image: furniture.imageData?.image)
+        } else {
             deleteButton.isHidden = true
-            selectImage()
         }
     }
     
     private func initialzeNavigationBar() {
         self.title = AlertConstants.furnitureVCTitle
         
-        var addOrUpdate: UIBarButtonItem!
-        
-        if actionType == .addNew {
-            
+        if self.inputs.actionType == .addNew {
             addOrUpdate = UIBarButtonItem(title: AlertConstants.addButtonTitle, style: .plain, target: self, action: #selector(FurnictureDetailViewController.didTapOnAddOrUpdateButton))
             
-        } else if actionType == .edit {
-            
+        } else {
             addOrUpdate = UIBarButtonItem(title: AlertConstants.updateButtonTitle, style: .plain, target: self, action: #selector(FurnictureDetailViewController.didTapOnAddOrUpdateButton))
         }
         
@@ -149,94 +143,70 @@ extension FurnictureDetailViewController {
     }
     
     private func configureLayout() {
-        setBorderAndCornerRadius(view: imageView)
-        setBorderAndCornerRadius(view: detailTextView)
+        imageView.setBorderCornerRadius()
+        detailTextView.setBorderCornerRadius()
     }
     
-    private func setBorderAndCornerRadius(view: UIView) {
-        view.layer.borderWidth = 1 / UIScreen.main.scale
-        view.layer.borderColor = UIColor.lightGray.cgColor
-        view.layer.cornerRadius = 3
+    func setImage(image: UIImage?) {
+        inputs.image = image
+        imageView.image = image
+        validateInputs()
     }
     
-    private func validateAndUpdateFurniture() {
-        guard let image = image,
-            let imageData = UIImageJPEGRepresentation(image, AppConstants.imageCompressionRatio) else {
-                showError(message:  AlertConstants.imageIsRequired)
-                return
-        }
-        
-        var name = nameTextField.text ?? ""
-        name = name.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        guard name.isEmpty == false else {
-            showError(message: AlertConstants.enterName)
+    private func registerNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChangeText(notification:)), name: NSNotification.Name.UITextFieldTextDidChange, object: nameTextField)
+    }
+    
+    private func deregisterNotifications() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func textFieldDidChangeText(notification: Notification) {
+        validateInputs()
+    }
+    
+    private func getInputs() -> FurnitureInput {
+        var inputs = FurnitureInput()
+        inputs.imageData = self.inputs.image?.imageData
+        inputs.name = nameTextField.text?.trim
+        inputs.details = detailTextView.text
+        return inputs
+    }
+    
+    private func validateInputs() {
+        let inputs = getInputs()
+        guard self.inputs.furnitureManager.validate(input: inputs) else {
+            addOrUpdate?.isEnabled = false
             return
         }
         
-        if (actionType == .edit && furniture?.name != name) || actionType == .addNew {
-            if furnitureManager.isFurnitureExists(furnitureWithName: name) {
-                let alertController = UIAlertController(title: nil, message: AlertConstants.furnutureExists, preferredStyle: .alert)
-                
-                let noAction = UIAlertAction(title: AlertConstants.no, style: .cancel, handler: nil)
-                alertController.addAction(noAction)
-                
-                let deletAction = UIAlertAction(title: AlertConstants.continueText, style: UIAlertActionStyle.destructive, handler: { (action) in
-                    self.addOrUpdateFurniture(name: name, details: self.detailTextView.text, imageData:  imageData)
-                })
-                alertController.addAction(deletAction)
-                
-                self.present(alertController, animated: true, completion: nil)
-            } else {
-                addOrUpdateFurniture(name: name, details: detailTextView.text, imageData:  imageData)
-            }
+        if self.inputs.actionType == .addNew {
+            addOrUpdate?.isEnabled = true
         } else {
-            addOrUpdateFurniture(name: name, details: detailTextView.text, imageData:  imageData)
+            addOrUpdate?.isEnabled = self.inputs.furnitureManager.hasChanges(furniture: self.inputs.furniture!, input: inputs) || self.inputs.imageChanged
         }
-        
     }
     
-    func addOrUpdateFurniture(name: String, details: String?, imageData: Data) {
-        if actionType == .addNew {
-            furniture = furnitureManager.addFurniture(name: name, details: details, imageData: imageData)
-        } else if actionType == .edit {
-            furniture = furnitureManager.updateFurniture(furniture: furniture!, name: name, details: detailTextView.text, imageData: imageData)
+    private func addOrUpdateFurniture() {
+        let input = getInputs()
+        if self.inputs.actionType == .addNew {
+            self.inputs.furniture = self.inputs.furnitureManager.addFurniture(input: input)
+        } else if self.inputs.actionType == .edit {
+            self.inputs.furniture = self.inputs.furnitureManager.updateFurniture(furniture: self.inputs.furniture!, input: input)
         }
         
         self.navigationController?.popViewController(animated: true)
     }
     
     private func selectImage() {
-        let imageOptionsAC = UIAlertController(title: nil,
-                                               message: AlertConstants.chooseImageFrom,
-                                               preferredStyle: .actionSheet)
-        imageOptionsAC.addAction(UIAlertAction(title: AlertConstants.capturePhoto,
-                                               style: .default,
-                                               handler:
-            { (action) in
-                self.presentImagePicker(imageSource: .camera)
-        }))
-        
-        imageOptionsAC.addAction(UIAlertAction(title: AlertConstants.photoLibrary,
-                                               style: .default,
-                                               handler:
-            { (action) in
-                self.presentImagePicker(imageSource: .photoLibrary)
-        }))
-        
-        imageOptionsAC.addAction(UIAlertAction(title: AlertConstants.cancel,
-                                               style: .cancel,
-                                               handler: nil))
-        if let popoverController = imageOptionsAC.popoverPresentationController {
-            popoverController.sourceView = imageView
-            popoverController.sourceRect = imageView.bounds
+        showImageOptions(sourceView: imageView) { (sourceType) in
+            self.presentImagePicker(imageSource: sourceType)
         }
-        self.present(imageOptionsAC, animated: true, completion: nil)
     }
     
     private func presentImagePicker(imageSource: UIImagePickerControllerSourceType) {
         guard UIImagePickerController.isSourceTypeAvailable(imageSource) else {
-            showError(message: AlertConstants.featureUnAvailable)
+            showAlert(title: AlertConstants.error, message: AlertConstants.featureUnAvailable, positiveAction: AlertConstants.ok, positiveHandler: nil)
             return
         }
         
@@ -245,12 +215,6 @@ extension FurnictureDetailViewController {
         picker.allowsEditing = true
         picker.sourceType = imageSource
         self.present(picker, animated: true, completion: nil)
-    }
-    
-    private func showError(message: String) {
-        let alertController = UIAlertController(title: AlertConstants.error, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: AlertConstants.ok, style: .cancel, handler: nil))
-        self.present(alertController, animated: true, completion: nil)
     }
 }
 
